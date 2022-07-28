@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo selectors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<style>
+    :root {
+        /* global variable */
+        --primary: white;
+    }
+
+    body {
+        font-family: 'Concert One', cursive;
+        text-shadow: 1px 1px 1px var(--primary);
+    }
+
+    header {
+        /* flex-direction: column; */
+    }
+
+    header::before {
+        /* important to write content */
+        content: "";
+        background: url('https://images.unsplash.com/photo-1599049180841-5d2a0150f3fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80') no-repeat center;
+        background-size: cover;
+        /* brightness of background image */
+        opacity: 0.9;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        /* width: 50%; */
+        /* height: 100%; */
+        width: 100vw;
+        height: 100vh;
+        /* important to write z index for backimg below the text */
+        z-index: -1;
+    }
+
+    .navbar {
+        font-size: 1.25em;
+        font-weight: bold;
+        display: flex;
+        list-style: none;
+
+    }
+
+    li {
+        margin: 0px auto;
+    }
+
+    section {
+        /* local variable */
+        --clor: black;
+        text-align: center;
+        padding: 4px 40px;
+        box-shadow: 1px 1px 10px var(--clor);
+        width: 50%;
+        margin: 0px auto;
+        /* animation-name: champa;
+        animation-duration: 10s;
+        animation-timing-function:ease-in-out ;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: alternate; */
+        animation: champa 10s ease-in-out 2s infinite forwards;
+        position: relative;
+    }
+
+    @keyframes champa {
+        from {
+            width: 50%;
+        }
+
+        to {
+            width: 75%;
+        }
+
+        0% {
+            top: 0px;
+            left: 0px;
+        }
+
+        25% {
+            top: 40px;
+            left: 40px;
+        }
+
+        50% {
+            top: 40px;
+            left: 40px;
+        }
+
+        75% {
+            top: 40px;
+            left: 0px;
+        }
+
+        100% {
+            top: 0px;
+            left: 0px;
+        }
+
+    }
+
+    .navigation {
+        box-shadow: 1px 2px 10px rgb(44, 44, 41);
+    }
+
+    /* transition */
+    .d {
+        position: absolute;
+        top: 300px;
+        left: 15%;
+        width: 70%;
+        box-shadow: 1px 1px 10px black;
+        text-align: center;
+
+        /* transition-property: all;
+       transition-duration: 4s;
+       transition-timing-function: ease-in-out;
+       transition-delay: 1s; */
+        transition: all 4s ease-in-out 1s;
+    }
+    
+    .d:hover {
+        font-size: 15px;
+        color: blue;
+    } 
+    /* Transform in css */
+    .t {
+        box-shadow: 1px 1px 10px black;
+        position: absolute;
+        top: 400px;
+        left: 35%;
+        width: 30%;
+        transition: all 2s ease-in 1s;
+        text-align: center;
+    }
+
+    .t:hover {
+        transform: rotate(-10deg);
+        color: blueviolet;
+    }
+</style>
+
+<body>
+    <header>
+        <nav class="navigation">
+            <ul class="navbar">
+
+                <li class="A">Home</li>
+                <li class="A">Services</li>
+                <li class="A">Gallery</li>
+                <li class="A">Feedback</li>
+                <li class="A">About Us</li>
+                <li class="A">Contact Us</li>
+            </ul>
+        </nav>
+        <section>
+            <h2>Welcome To The Magic World</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus libero tempora tempore! Quam harum
+                excepturi, aspernatur officia illum aperiam inventore molestias? Sit alias deserunt quos, tempore illo
+                impedit ipsum ipsa, veniam omnis obcaecati, quam facere error fugiat sapiente iste dolor.</p>
+        </section>
+        <br><br>
+        <div class="d">
+            <h3>Thar is most populated and developing desert in the world</h3>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore praesentium non doloribus minima mollitia
+            aliquam nesciunt.
+        </div>
+        <br><br>
+        <div class="t">
+            <h4>Lets make journey to enjoyable</h4>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem id excepturi possimus!
+        </div>
+    </header>
+</body>
+
+</html>
